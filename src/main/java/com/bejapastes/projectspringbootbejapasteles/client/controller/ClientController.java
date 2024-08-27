@@ -5,6 +5,7 @@ import com.bejapastes.projectspringbootbejapasteles.client.services.ClientServic
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+import jakarta.validation.Valid;
 import java.util.*;
 
 @RestController()
@@ -28,7 +29,7 @@ public class ClientController {
     }
 
     @PostMapping()
-    public ResponseEntity<?> postClient(@RequestBody Client client){
+    public ResponseEntity<?> postClient(@Valid @RequestBody Client client){
         try{
             clientService.save(client);
             return ResponseEntity.status(201).body(client);
