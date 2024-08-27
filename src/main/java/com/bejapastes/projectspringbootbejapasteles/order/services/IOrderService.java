@@ -8,5 +8,6 @@ public interface IOrderService{
     public void deleteById(Long id);
     public Order findById(Long id);
     public List<Order> findAll();
+    public List<Order> findOrderByClientID(Long client_id);
 }
 

@@ -55,6 +55,11 @@ public class ProductController {
         return productService.save(productDB);
     }
 
+    @GetMapping("/stock")
+    public List<Product> getProductsWithStock(){
+        return productService.findProductsWithStock();
+    }
+
     private ResponseEntity<Map<String, String>> createErrorResponse(String message, int status) {
         Map<String, String> response = new HashMap<>();
         response.put("message", message);

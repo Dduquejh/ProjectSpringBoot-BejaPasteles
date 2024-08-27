@@ -59,4 +59,9 @@ public class OrderService implements IOrderService {
     public void deleteById(Long id) {
         orderDAO.deleteById(id);
     }
+
+    @Override
+    public List<Order> findOrderByClientID(Long client_id) {
+        return orderDAO.findOrderByClientID(client_id);
+    }
 }

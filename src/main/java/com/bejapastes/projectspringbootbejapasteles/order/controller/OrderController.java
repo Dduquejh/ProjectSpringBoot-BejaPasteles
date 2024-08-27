@@ -45,6 +45,11 @@ public class OrderController{
         orderService.deleteById(id);
     }
 
+    @GetMapping("/client/{client_id}")
+    public List<Order> getOrdersByClientID(@PathVariable Long client_id){
+        return orderService.findOrderByClientID(client_id);
+    }
+
     private ResponseEntity<Map<String, String>> createErrorResponse(String message, int status) {
         Map<String, String> response = new HashMap<>();
         response.put("message", message);
